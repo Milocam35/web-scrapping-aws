@@ -1,0 +1,28 @@
+{
+    "scrapper": {
+        "app_function": "proyect.app",
+        "aws_region": "us-east-1",
+        "exclude": [
+            "boto3",
+            "dateutil",
+            "botocore",
+            "s3transfer",
+            "concurrent"
+        ],
+        "profile_name": "default",
+        "project_name": "scrapper",
+        "runtime": "python3.10",
+        "s3_bucket": "parcialbigdatauwu",
+        "keep_warm": false,
+        "apigateway_enabled": false,
+        "manage_roles": false,
+        "role_name": "LabRole",
+        "events": [
+            {
+                "function": "proyect.app",
+                "type": "schedule",
+                "expression": "cron(0 14 * * ? *)"
+            }
+        ]
+    }
+}

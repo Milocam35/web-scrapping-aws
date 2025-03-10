@@ -1,0 +1,33 @@
+{
+    "parser": {
+        "app_function": "parser.app",
+        "aws_region": "us-east-1",
+        "exclude": [
+            "boto3",
+            "dateutil",
+            "botocore",
+            "s3transfer",
+            "concurrent"
+        ],
+        "include": ["bs4"],
+        "profile_name": "default",
+        "project_name": "parser",
+        "runtime": "python3.10",
+        "s3_bucket": "casas-finales-parseadas",
+        "keep_warm": false,
+        "apigateway_enabled": false,
+        "manage_roles": false,
+        "role_name": "LabRole",
+        "events": [
+            {
+                "function": "parser.app",
+                "event_source": {
+                    "arn": "arn:aws:s3:::parcialbigdatauwu",
+                    "events": [
+                        "s3:ObjectCreated:*"
+                    ]
+                }
+            }
+        ]
+    }
+}
