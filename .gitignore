@@ -1,2 +1,3 @@
-/scrapper-env
-/parser-env
+/parser/parser-env
+/scrapper/scrapper-env
+*/*-env/
